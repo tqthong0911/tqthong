@@ -18,7 +18,7 @@
     * [Personnel information](personnel-information.md)
     * [Role based equipment information](role-based-equipment-information.md)
     * [Physical asset information](physical-asset-information.md)
-    * Material information
+    * [Material information](material-information.md)
     * Process segment information
 * [Operations management information](production-operations-models-and-generic-operations-models.md)
     * Operations definition information
