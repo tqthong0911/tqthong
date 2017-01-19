@@ -17,7 +17,7 @@
 * [Common object models](common-object-models.md)
     * [Personnel information](personnel-information.md)
     * [Role based equipment information](role-based-equipment-information.md)
-    * Physical asset information
+    * [Physical asset information](physical-asset-information.md)
     * Material information
     * Process segment information
 * [Operations management information](production-operations-models-and-generic-operations-models.md)
