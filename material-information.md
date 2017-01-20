@@ -107,7 +107,7 @@ A material lot may be made up of material sublets. Material lots and material su
 | Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples | Inventory Examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | ID | A unique identification of a specific material definition, within the scope of the information exchanged \(production capability, production schedule, production performance,...\)&lt;br /&gt;The ID shall be used in other parts of the model when the material definition needs to be indentified, such as the production capability for this material definition, or a production response identifying the material definition used. | L66729-99 | L8828-81 | L53920-02 | L8626-33 |
-| Description | Additional information about the material lot | PlastiFab 10/31 shipment | Oil | Reagent  | Wrapping material |
+| Description | Additional information about the material lot | PlastiFab 10/31 shipment | Oil | Reagent | Wrapping material |
 | Assembly Type | Optional: Defines the type assembly. The defined types are:&lt;br /&gt;Physical - The components of the assembly are physically connected or in the same area | Physical | Physical | Logical | Physical |
 | Assembly Relationship | Optional: Defines the type of the relationships. The defined types are: &lt;br /&gt;Permanent — An assembly that is not intended to spilt during the production process.&lt;br /&gt;Transient — A temporary assembly using during production, such as a pallet of different materials pr a batch kit.&lt;br /&gt;Note 2 If material lost \(or sublots\) are merged or absorbed \(e.g. blended\), then this is a new material lot, as defined in Part 1 of this standard, not an assembly | Permanent | Transient | Permanent | Transient |
 | Status | Status of the material lot. For example, released, approved, blocked, in process, in quality check. | Work center 1 | Maintenance Shed 4S | Work Bench 10, Top Shelf | Warehouse 1 |
@@ -116,89 +116,87 @@ A material lot may be made up of material sublets. Material lots and material su
 
 > NOTE 2 if non-lot .ntrolled Items must be maintain. In multiple locations then the inbrmallon may be represented In the Material Sublot model through the use of unique sublot lOs Mr ea. different location a. Materlai Definition.
 
-A material lot or a material sublet may be defined as containing an assembly of material lots or material sublets and as part of an assembly of material lots or material sublets: 
+A material lot or a material sublet may be defined as containing an assembly of material lots or material sublets and as part of an assembly of material lots or material sublets:
 
 1. A material lot or a material sublet may define an assembly of zero or more material lots or a material sublets. 
 2. A material lot or a material sublet may be an assembly element of zero or more material lots or a material sublets. 
 3. An assembly may be defined as a permanent or transient assembly of material lots or sublets. 
 4. > EXAMPLE 1 A translent assembly could be a temporary collection of maMrial maintalned as a batch kit on a pailM, the bat. klt Is Identified with a unique identification and may contain specific properties, such as a pallet identification, location. and related bat. ID.
-
+   >
    > EXAMPLE 2 A permanent assembly of material may be an automobile. The automobile has a unlque vehlcie Identification number \(VIN\) and other properties. The automobile may contain an assembly of an englne, transmission, chassis, and wheels, each with their own unlque identificallon a. properties.
 5. An assembly may be defined as physical or a logical assembly of material or sublets. Assemblies of materials do not imply a manufacturing status.
 
 > EXAMPLE 3 A finIshed traMor is a physlcal assemMy of matedais.
-
+>
 > EXAMPLE 4 An unassembled collection of tractor components that are separately shipped is a logical assembly of materials.
 
 **5.4.7 Material lot property **
 
-Each material can have unique values for zero or more material lot properties, such as a specific pH value for the specific lot of material, or a specific density tor the lot of material. A material lot property may be tested by the execution of a material test specification with results exchanged in a QA test specification result. 
+Each material can have unique values for zero or more material lot properties, such as a specific pH value for the specific lot of material, or a specific density tor the lot of material. A material lot property may be tested by the execution of a material test specification with results exchanged in a QA test specification result.
 
-Material lot properties may contain nested material lot properties. 
+Material lot properties may contain nested material lot properties.
 
-A material lot property is associated with either a material lot or a material sublet. When associated with a material lot it specifies a properly value for all sublets, when associated with a material sublet it specifies a property value fora single sublet. 
+A material lot property is associated with either a material lot or a material sublet. When associated with a material lot it specifies a properly value for all sublets, when associated with a material sublet it specifies a property value fora single sublet.
 
 **Table 28 lists the attributes of material lot property. **
 
-| Attribute Name |  Description |  Production Examples |  Maintenance Examples |  Quality Examples |  inventory Examples |
+| Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples | inventory Examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-|  ID |  An identlfIcation of the speciflc material iot property | Average sheet thickness |  Oil Viscosity |  pH |  Weight |
-|  Description |  Additional information about the material iot property | Measured thickness |  Coefficient of viscosity |  Acidity | weight to be added to shipping label |
-|  Value |  The value, set of values, or range of the property. |  5.002  | 230 x 10^-3 | 4.01 | 20.3 |
-| Value Unit of Measure  | The unit of measure of the associated property value, if applicable. | mm | Pa-s | pH | g / m^2 |
-
-
+| ID | An identlfIcation of the speciflc material iot property | Average sheet thickness | Oil Viscosity | pH | Weight |
+| Description | Additional information about the material iot property | Measured thickness | Coefficient of viscosity | Acidity | weight to be added to shipping label |
+| Value | The value, set of values, or range of the property. | 5.002 | 230 x 10^-3 | 4.01 | 20.3 |
+| Value Unit of Measure | The unit of measure of the associated property value, if applicable. | mm | Pa-s | pH | g / m^2 |
 
 **5.4.8  Material sublet **
 
-A material lot may be stored in separately identifiable quantities. Each separately identifiable quantity of the same material lot shall be presented as a material sublet. All material sublots are part of the same material lot, so they have the material lops property values. A material sublot may be just a single item. Table 29 lists the attributes of material sublot Material sublets rnay have sublot specific properties. 
+A material lot may be stored in separately identifiable quantities. Each separately identifiable quantity of the same material lot shall be presented as a material sublet. All material sublots are part of the same material lot, so they have the material lops property values. A material sublot may be just a single item. Table 29 lists the attributes of material sublot Material sublets rnay have sublot specific properties.
 
-Material sublot properties may contain nested material sublet properties. 
+Material sublot properties may contain nested material sublet properties.
 
 > EXAMPLE Sublot propertles may be RFID tag !Ds or other identification properties, such that each sublet of a lot has a different property value.
 
-Each material sublet shall contain the location of the sublot and the quantity or amount of material available in the sublot. 
+Each material sublet shall contain the location of the sublot and the quantity or amount of material available in the sublot.
 
-Material sublots may contain other sublots. 
+Material sublots may contain other sublots.
 
 > NOTE For example, a sublet may be a pallet, each box on the pallet may also be a sublot, a. each material blister pack in the box may also be a sublet
 
-A material sublot shall include 
+A material sublot shall include
 
-a\) a unique identification of the sublot, 
+a\) a unique identification of the sublot,
 
-b\) the storage location of the sublet; 
+b\) the storage location of the sublet;
 
-c\) the unit of measure of the material \(for example, parts, kg, tons\); 
+c\) the unit of measure of the material \(for example, parts, kg, tons\);
 
-d\) any status of the sublot. 
+d\) any status of the sublot.
 
 **Table 29 — Attributes of material sublet **
 
-|  | Description |  Production Examples | Maintenance Examples | Qanlity Examples | inventory examples |
+|  | Description | Production Examples | Maintenance Examples | Qanlity Examples | inventory examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | ID | A unique Identification of a specific material sublot, within the scope of the information exchanged \(prodcution capability, production schedule, production performance ...\) &lt;br /&gt;The ID shall be used in other parts of the model when the material sublot need to be identified, such as the production capability for this material sublot, or a production response indetifying the material sublot used. | 1999-10-27- a67-B6653 | L8828-81-S1 | L53920-02-A554 | L8262-33-2 |
-| Description  | Additional information about the material sublot  | Pallet 2 of 6 | oil | Reagent | wraping  material |
+| Description | Additional information about the material sublot | Pallet 2 of 6 | oil | Reagent | wraping  material |
 | Assembly Type | Optional: Defines the type assembly. The defined types are:&lt;br /&gt;Physical - The components of the assembly are physically connected or in the same area | Physical | Physical | Logical | Physical |
 | Assembly Relationship | Optional: Defines the type of the relationships. The defined types are: &lt;br /&gt;Permanent — An assembly that is not intended to spilt during the production process.&lt;br /&gt;Transient — A temporary assembly using during production, such as a pallet of different materials pr a batch kit.&lt;br /&gt;Note 2 If material lost \(or sublots\) are merged or absorbed \(e.g. blended\), then this is a new material lot, as defined in Part 1 of this standard, not an assembly | Permanent | Transient | Permanent | Transient |
 | Status | Status of the material lot. For example, released, approved, blocked, in process, in quality check. | Released | approved | blocked | approved |
 | Storage Location | An identification of the storage location or a physical location of the material sublot | Stainless Steel Tote \#57 | Maintenance Shed 4S, Top Sheft | Work Bench 10, Top SHelt | Warehouse 1 |
 | Quantity | The quantity of the material sublot | 40 | 10 | 1 | 41 |
-| Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable | sheets | cans  | liter | rolls |
+| Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable | sheets | cans | liter | rolls |
 
 **5.4.9  Material test specification **
 
-A representation of a material test shall be shown as a material test specification. A material test specification shall be associated with one or more material definition properties. This is typically used where a test is required to ensure that the material has the required property value. A material test specification rnay identify a test for one or more material definition properties. Not all properties need to have a defined material test specification. Table 30 lists the attributes of material test specification. 
+A representation of a material test shall be shown as a material test specification. A material test specification shall be associated with one or more material definition properties. This is typically used where a test is required to ensure that the material has the required property value. A material test specification rnay identify a test for one or more material definition properties. Not all properties need to have a defined material test specification. Table 30 lists the attributes of material test specification.
 
-Material test specifications may also be related to a production request. The same material may have different specifications for different production requests, depending on specific customer requirements. 
+Material test specifications may also be related to a production request. The same material may have different specifications for different production requests, depending on specific customer requirements.
 
-A material test specification shall include 
+A material test specification shall include
 
-a\) an identification of the test; 
+a\) an identification of the test;
 
-b\) a version of the test, 
+b\) a version of the test,
 
-c\) a description of the test. 
+c\) a description of the test.
 
 **Table 30 — Attributes of material test specification **
 
@@ -210,29 +208,29 @@ c\) a description of the test.
 
 **5.4.10 Material test result **
 
-A representation of the results from the execution of a quality assurance test shall be presented as a material test result. A material test result records the results from a material test for a specific material lot or material sublet. The following are some characteristics of material test results. Table 31 lists the attributes of material test result. 
+A representation of the results from the execution of a quality assurance test shall be presented as a material test result. A material test result records the results from a material test for a specific material lot or material sublet. The following are some characteristics of material test results. Table 31 lists the attributes of material test result.
 
-a\) They shall be related to a material lot or material sublot. 
+a\) They shall be related to a material lot or material sublot.
 
-b\) They may be related to a production request. 
+b\) They may be related to a production request.
 
-c\) They may be associated with a specific production response. 
+c\) They may be associated with a specific production response.
 
-d\) They may be related to a specific process segment. 
+d\) They may be related to a specific process segment.
 
-e\) They may include a pass/fail status of the test. 
+e\) They may include a pass/fail status of the test.
 
-f\) They may include quantitative information of the tests. 
+f\) They may include quantitative information of the tests.
 
-g\) They may include the granting or refusing of an in-process or finished goods waiver request. 
+g\) They may include the granting or refusing of an in-process or finished goods waiver request.
 
-h\) They may be related to a product characteristic. 
+h\) They may be related to a product characteristic.
 
-Material test results may be associated with a specific production response. 
+Material test results may be associated with a specific production response.
 
 **Table 31 —Attributes of material test result **
 
-| Attribute name | Description | Production Examples  | Maintenance Examples |  Quality Examples  | inventory Examples |
+| Attribute name | Description | Production Examples | Maintenance Examples | Quality Examples | inventory Examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | ID | A unique Instance identification that records the results from the execution of a test identified in a material test specification for a lot or sublot. \(For example, this may just be a number assigned by the testing authority \) | THK101/01-10-2000 | MO998 | 7763 | u7373 |
 | Description | Additional information about the MNaterial Test Result. | Results from thickness test for PlastiFab lot on 1999-10-25 | Test of metal content in oil | Test of water pH | check of expiration date |
@@ -242,14 +240,14 @@ Material test results may be associated with a specific production response.
 
 **5.4.11 Assemblies **
 
-Assemblies are collections or sets of related elements. Assemblies are represented as relationships between elements and attributes of the elements. Each assembly element has its own identity and properties, such as a material lot which has its own identity and properties. An object with an assembly \(material lot, material sublot, material class, and material definition\) is contains the list of other elements that make up the assembly. 
+Assemblies are collections or sets of related elements. Assemblies are represented as relationships between elements and attributes of the elements. Each assembly element has its own identity and properties, such as a material lot which has its own identity and properties. An object with an assembly \(material lot, material sublot, material class, and material definition\) is contains the list of other elements that make up the assembly.
 
 > NOTE 1 Many assembly type industries, such as automobile manufacturing, airplane assembly, and hftnibfte manufacturing use the concept of assemblies. A produced matenal, a unique identlfication and properties, is made up of other materials with their own unique identificatbn a. propertles.
-
+>
 > EXAMPLE 1 An 'automobile' is a material lot, with spear. properties \(co.r, VIN \#, make, model, ...\) while it also contalns other chassis parts \(engine, transmission, axles ...\) that also have their own unique Identification and properties.
-
+>
 > EXAMPLE 2 A transaxie In an automobile has Its own identification a. also is an assembly of subcomponents, as shown in Figure X, including seals, bearing, axle shaft, etc, as shown in Figure 10. There may be an assembly whIch defines a specific model of transmission described in a Material Dermition Assembly,
-
+>
 > EXAMPLE 3 A 'batch kit" is an assembly that contains a collection of different materials that would be used in the productbn of a batch, for example a batch kit for a soup may contain the seasonings that are used in production of a single bat. There may be an assembly which defines the class of materials used in a batch kit described in a Material Class Assembly, and there may be a batch specific assembly which defines specific material lots or sublets descnbed in a Material Assembly.
 
 ![](/assets/F-10.png)
@@ -260,13 +258,13 @@ Assemblies are collections or sets of related elements. Assemblies are represent
 
 **5.5.1 Process segment model **
 
-Process segments are the smallest elements of manufacturing activities that are visible to business processes. The process segment model is a hierarchical model, in which multiple levels of abstraction of manufacturing processes may be defined because there may be multiple business processes requiring visibility to manufacturing activities. 
+Process segments are the smallest elements of manufacturing activities that are visible to business processes. The process segment model is a hierarchical model, in which multiple levels of abstraction of manufacturing processes may be defined because there may be multiple business processes requiring visibility to manufacturing activities.
 
 > NOTE The term business provess segment Is a synonym for process segment a. Is used to reflect the business process aspect of the process segment.
 
-Process segments are also logical grouping of personnel resources, equipment resources, and material required to perform a manufacturing operations step. A process segment defines the needed classes of personnel, equipment, and material, and/or it may define specific resources, such as specific equipment needed. A process segment may define the quantity of the resource needed. 
+Process segments are also logical grouping of personnel resources, equipment resources, and material required to perform a manufacturing operations step. A process segment defines the needed classes of personnel, equipment, and material, and/or it may define specific resources, such as specific equipment needed. A process segment may define the quantity of the resource needed.
 
-The manufacturing operations step may be a production operations step, inventory operations step, maintenance operations step, and quality operations step. 
+The manufacturing operations step may be a production operations step, inventory operations step, maintenance operations step, and quality operations step.
 
 Figure 11 is the process segment model. ![](/assets/F-11.png)
 
@@ -274,45 +272,45 @@ Figure 11 is the process segment model. ![](/assets/F-11.png)
 
 **5.5.2 Process segment attributes **
 
-A process segment lists the classes of personnel, equipment, physical assets, and material needed, and/or it may present specific resources, such as specific equipment needed for the process segment. A process segment may list the quantity of the resource needed. 
+A process segment lists the classes of personnel, equipment, physical assets, and material needed, and/or it may present specific resources, such as specific equipment needed for the process segment. A process segment may list the quantity of the resource needed.
 
-A process segment is something that occurs or can occur during manufacturing operations. 
+A process segment is something that occurs or can occur during manufacturing operations.
 
-Process segment may identify 
+Process segment may identify
 
-a\) the time duration associated with the resource; 
+a\) the time duration associated with the resource;
 
 > NOTE Five hours or 5 hours/100 kg
 
-b\) constraint rules associated with ordering or sequencing of segments. 
+b\) constraint rules associated with ordering or sequencing of segments.
 
-A process segment may be made up of other process segments, in a hierarchy of definitions. 
+A process segment may be made up of other process segments, in a hierarchy of definitions.
 
-Process segments may contain specifications of specific resources required by the Process segment Process segments may contain parameters that can be listed in specific operations requests. 
+Process segments may contain specifications of specific resources required by the Process segment Process segments may contain parameters that can be listed in specific operations requests.
 
 **Table 32 defines the attributes for process segment objects. **
 
-| Attribute Name | Description | Production Examples |  Maintenance Examples |  Quality Examplea | inventory Examples |
+| Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examplea | inventory Examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| ID | A unique identification of a process segment, within the scope of the information exchanged \(operations capability, operations schedule, operations performance .\)&lt;br /&gt;The ID shall be used in other parts of the model when the process segment needs to be identified, such as the operations capability for this segment, or an operations response Identifying the segment. | Widget Frame Milling | Replace Motor | Pull Sample and Run Test  | Transfer |
-| Description |  Additional InformatIon about the process segment. | Frame milling operation, separately costed operation | Large size motor replacement | Check purity and concentrat ion | Move pallet from truck to conveyor system |
-| Operations type | Describes the category of the activity&lt;br /&gt;Required attribute.&lt;br /&gt;Defined values are: Production, Maintenance, Quallty, inventory, or mixed&lt;br /&gt;'Mixed' shall be used when the activity contains several categories of process segments | Production | Maintenance |  Quality | inventory |
-| Hierarchy Scope | identifies where the exchanged information fits within the role based equipment hierarchy.&lt;br /&gt; Optionally defines the scope of the process segment definition, such as the site or area it is defined for. | South Shore \(Site\)/ Work Line \(Area\) | South shore \(SITE\)/ Packaging \(Area\) | Mixer Sample Port \(Work Unit\) | Receiving dock \(work Center\)  |
-| Duration |  Duration of process segment, if known | 25 | \(not applicable\) | 20 | 5 |
-| Duration Unit of Measure  | The units of measure of the duration, if defined | Minutes | \(not applicable\) | minutes | minutes |
+| ID | A unique identification of a process segment, within the scope of the information exchanged \(operations capability, operations schedule, operations performance .\)&lt;br /&gt;The ID shall be used in other parts of the model when the process segment needs to be identified, such as the operations capability for this segment, or an operations response Identifying the segment. | Widget Frame Milling | Replace Motor | Pull Sample and Run Test | Transfer |
+| Description | Additional InformatIon about the process segment. | Frame milling operation, separately costed operation | Large size motor replacement | Check purity and concentrat ion | Move pallet from truck to conveyor system |
+| Operations type | Describes the category of the activity&lt;br /&gt;Required attribute.&lt;br /&gt;Defined values are: Production, Maintenance, Quallty, inventory, or mixed&lt;br /&gt;'Mixed' shall be used when the activity contains several categories of process segments | Production | Maintenance | Quality | inventory |
+| Hierarchy Scope | identifies where the exchanged information fits within the role based equipment hierarchy.&lt;br /&gt; Optionally defines the scope of the process segment definition, such as the site or area it is defined for. | South Shore \(Site\)/ Work Line \(Area\) | South shore \(SITE\)/ Packaging \(Area\) | Mixer Sample Port \(Work Unit\) | Receiving dock \(work Center\) |
+| Duration | Duration of process segment, if known | 25 | \(not applicable\) | 20 | 5 |
+| Duration Unit of Measure | The units of measure of the duration, if defined | Minutes | \(not applicable\) | minutes | minutes |
 
 **5.5.3  Personnel segment specification **
 
- Personnel resources that are required for a process segment shall be presented as personnel segment specifications. 
+Personnel resources that are required for a process segment shall be presented as personnel segment specifications.
 
 ** Table 33 defines the attributes for personnel segment specification objects. **
 
 | Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples | Inventory Examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Personnel Class | Identifies the associated personnel class of set of personnel classes specified | Milling Machine Operator | Type 2 Mechanic  | Lab Tech A  | Lift truck operator |
+| Personnel Class | Identifies the associated personnel class of set of personnel classes specified | Milling Machine Operator | Type 2 Mechanic | Lab Tech A | Lift truck operator |
 | Person \* | Identifies the associated person or set of persons specified | &lt;n/a&gt; | &lt;n/a&gt; | &lt;n/a&gt; | &lt;n/a&gt; |
 | Description | Contains additional information and descriptions of the personnel segment specification definition. | Defines the time for journey man milling machine operators for each widget frame milling process segment. | Qualified to replace motor type NEMA 4. | Quanlified to operation of reflectometer | Certified lift truck operator |
-| Personnel Use | Defines the expected use of the personnel class or person. | Allocated  | Certified | Certified | Allocated |
+| Personnel Use | Defines the expected use of the personnel class or person. | Allocated | Certified | Certified | Allocated |
 | Quantity | Specifies the personnel resource required for the parent process segment, if appliacble | 1.3 | 2 | .5 | 5 |
 | Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable | Hours / piece | Hours / motor | Hours / sample | minites / transfer |
 
@@ -320,37 +318,64 @@ Process segments may contain specifications of specific resources required by th
 
 **5.5.4 Personnel segment specification property**
 
-Specific properties that are required are specified in personnel segment specification properties. Personnel segment specification properties may contain nested personnel segment specification properties. 
+Specific properties that are required are specified in personnel segment specification properties. Personnel segment specification properties may contain nested personnel segment specification properties.
 
-Table 34 defines the attributes for personnel segment specification property objects 
+Table 34 defines the attributes for personnel segment specification property objects
 
 **Table 34 — Attributes of personnel segment specification property **
 
-| Attribute Name | Description |  Production Examples | Maintenance Examples  | Quality Examples | inventory examples |
+| Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples | inventory examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | ID | An identification of a property of the associated person properly or personnel class property. | Height | Scuba Trained | Color Vision | 2^nd Shift |
 | Description | Contains additional information and descriptions of the property. | Defines the required minimum height of a milling machine operator | Class 4 work requires use of scuba underwater | Must distinguish red and green | Must be able to operate 2^nd shift |
-| Value | The value, set of values, or range of the property. | 150 |  TRUE |  TRUE |  TRUE |
+| Value | The value, set of values, or range of the property. | 150 | TRUE | TRUE | TRUE |
 | Value Unit of Measure | The unit of measure of the associated property value, if applicable. | cm | &lt;True, False&gt; | &lt;True, False&gt; | &lt;True, False&gt; |
 | Quantity | Specifies the personnel resource required, if applicable | 1.3 | \(not applicable\) | \(not applicable\) | \(not applicable\) |
 | Quantity Unit of Measure | The unit of measure of the assoclated quantity, it applicable, | Hlours / piece | \(not applicable\) | \(not applicable\) | \(not applicable\) |
 
 **5.5.5 Equipment segment specification **
 
-Equipment resources that are required for a process segment shall be presented as equipment segment specifications. 
+Equipment resources that are required for a process segment shall be presented as equipment segment specifications.
 
-Table 35 defines the attributes for equipment segment specification objects. 
+Table 35 defines the attributes for equipment segment specification objects.
 
 **Table 35 — Attributes of equipment segment specification **
 
-| Attribute Name | Description | Production Examples | MainMnance Examples | Quality Examples  | Inventory Examples |
+| Attribute Name | Description | Production Examples | MainMnance Examples | Quality Examples | Inventory Examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Equipment Class | Identifies the associated equipment ctass or set of equipment classes of the capability. | \(not applicable\) | 10 Ton Crane  | Reflectometer | 800 KG Fork Truck |
+| Equipment Class | Identifies the associated equipment ctass or set of equipment classes of the capability. | \(not applicable\) | 10 Ton Crane | Reflectometer | 800 KG Fork Truck |
 | Equipment \* | Identifies the associated equipment or set of equipment of the capability. | Milling Machine 001 | \(not applicable\) | \(not applicable\) | \(not applicable\) |
-| Description |  |  |  |  |  |
-|  |  |  |  |  |  |
+| Description | Contains additional information and descriptions. | Equipment need for widget milling process segment | Crane reuired to remove motor | Measures substrate thickness of wafer | Able to lift two standard pallets |
+| Equipment use | Defines the expected use of the equipment class or equipment in the context of the process segment. |  Part Milling | Remove and Replace Motor | Run test | Material Movement |
+| Quantity | specifies the amount of resources required, if applicable | 1.3 | 1 | 1 | 1 |
+| Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable. | Machine Hours / piece | Day | Test | Move |
 
-NOTE Typically either equipment Wass or equipment Is defined 
+NOTE Typically either equipment Wass or equipment Is defined
+
+**5.5.6 Equipment segment specification property **
+
+Specific properties that are required are specified in equipment segment specification properties. 
+
+Equipment segment specification properties may contain nested equipment segment specification properties. 
+
+Table 36 defines the attributes for equipment segment spec fication property objects. 
+
+**Table 36 — Attributes of equipment segment specification property **
+
+| Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples  | Inventory Examples |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| ID | An Identification of a property of the associated equipment property or equipment class property | Milling Direction | Molbile | calibrated |  Power |
+| Description | Contains additional information and descriptions | Only vertical milling machines are suitable for wldget milling. | Mobile crane | Within calibrated date | Type of power |
+| Value | The value, set of values, or range of the property, For example: vertical, Horizontal |  Vertical | TRUE | TRUE |  Electric |
+| Value Unit of Measure | The unit of measure of the associated property value, If applicable,  | \(not applicable\) |  &lt;True. False&gt; |  &lt;True. False&gt; | {Electric, Gas, LP} |
+| Quantity | Specifies the amount of resources required. | 1.0 | \(not applicable\) | \(not applicable\) | \(not applicable\) |
+| Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable. | Machine Hours / Piece |  \(not applicable\)  |  \(not applicable\)  |  \(not applicable\)  |
+
+**5.5.7 Material segment specification **
+
+Material resources that are required fora process segment shall be listed as material segment specifications. 
+
+Table 37 defines the attributes for material segment specification objects. 
 
 
 
