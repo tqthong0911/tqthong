@@ -21,11 +21,11 @@
     * [Material information](material-information.md)
     * Process segment information
 * [Operations management information](production-operations-models-and-generic-operations-models.md)
-    * Operations definition information
-    * Operations schedule information
-    * Operations performance information
-    * Operations capability information
-    * Process segment capability information
+    * [Operations definition information](operations-definition-information.md)
+    * [Operations schedule information](operations-schedule-information.md)
+    * [Operations performance information](operations-performance-information.md)
+    * [Operations capability information](operations-capability-information.md)
+    * [Process segment capability information](process-segment-capability-information.md)
 * [Object model inter-relationships](object-model-inter-relationships.md)
 * List of objects
 * Compliance
