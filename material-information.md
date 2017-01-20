@@ -346,7 +346,7 @@ Table 35 defines the attributes for equipment segment specification objects.
 | Equipment Class | Identifies the associated equipment ctass or set of equipment classes of the capability. | \(not applicable\) | 10 Ton Crane | Reflectometer | 800 KG Fork Truck |
 | Equipment \* | Identifies the associated equipment or set of equipment of the capability. | Milling Machine 001 | \(not applicable\) | \(not applicable\) | \(not applicable\) |
 | Description | Contains additional information and descriptions. | Equipment need for widget milling process segment | Crane reuired to remove motor | Measures substrate thickness of wafer | Able to lift two standard pallets |
-| Equipment use | Defines the expected use of the equipment class or equipment in the context of the process segment. |  Part Milling | Remove and Replace Motor | Run test | Material Movement |
+| Equipment use | Defines the expected use of the equipment class or equipment in the context of the process segment. | Part Milling | Remove and Replace Motor | Run test | Material Movement |
 | Quantity | specifies the amount of resources required, if applicable | 1.3 | 1 | 1 | 1 |
 | Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable. | Machine Hours / piece | Day | Test | Move |
 
@@ -354,28 +354,60 @@ NOTE Typically either equipment Wass or equipment Is defined
 
 **5.5.6 Equipment segment specification property **
 
-Specific properties that are required are specified in equipment segment specification properties. 
+Specific properties that are required are specified in equipment segment specification properties.
 
-Equipment segment specification properties may contain nested equipment segment specification properties. 
+Equipment segment specification properties may contain nested equipment segment specification properties.
 
-Table 36 defines the attributes for equipment segment spec fication property objects. 
+Table 36 defines the attributes for equipment segment spec fication property objects.
 
 **Table 36 — Attributes of equipment segment specification property **
 
-| Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples  | Inventory Examples |
+| Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples | Inventory Examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| ID | An Identification of a property of the associated equipment property or equipment class property | Milling Direction | Molbile | calibrated |  Power |
+| ID | An Identification of a property of the associated equipment property or equipment class property | Milling Direction | Molbile | calibrated | Power |
 | Description | Contains additional information and descriptions | Only vertical milling machines are suitable for wldget milling. | Mobile crane | Within calibrated date | Type of power |
-| Value | The value, set of values, or range of the property, For example: vertical, Horizontal |  Vertical | TRUE | TRUE |  Electric |
-| Value Unit of Measure | The unit of measure of the associated property value, If applicable,  | \(not applicable\) |  &lt;True. False&gt; |  &lt;True. False&gt; | {Electric, Gas, LP} |
+| Value | The value, set of values, or range of the property, For example: vertical, Horizontal | Vertical | TRUE | TRUE | Electric |
+| Value Unit of Measure | The unit of measure of the associated property value, If applicable, | \(not applicable\) | &lt;True. False&gt; | &lt;True. False&gt; | {Electric, Gas, LP} |
 | Quantity | Specifies the amount of resources required. | 1.0 | \(not applicable\) | \(not applicable\) | \(not applicable\) |
-| Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable. | Machine Hours / Piece |  \(not applicable\)  |  \(not applicable\)  |  \(not applicable\)  |
+| Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable. | Machine Hours / Piece | \(not applicable\) | \(not applicable\) | \(not applicable\) |
 
 **5.5.7 Material segment specification **
 
-Material resources that are required fora process segment shall be listed as material segment specifications. 
+Material resources that are required fora process segment shall be listed as material segment specifications.
 
-Table 37 defines the attributes for material segment specification objects. 
+Table 37 defines the attributes for material segment specification objects.
+
+**Table 37 — Attributes of material segment specification **
+
+| Attribute Name | Description | Production Examples | Maintenanc Examples | Quality Examples | inventory Examples |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Material Class | Identifies the associated material class or set of malarial classes of the capability • | Polymer sheet stock 1001A | Motor Brushes | Sample Holder |  Pallet |
+| Material Definition | Identifies the associated material definition or set of material definitions of the capability • | Sheet stock 1443a | \#9949 | Polyurethane sample holder | Plastic Pallet |
+| Description | Contains additional information and descriptions | Defines the polymer reuired for a widget milling process segment | Brushes required during motor maintenance | Disposable sample holder | Pallet used for storage |
+| Assembly Type | Optional: Defines the type of the assembly The defined types are:&lt;br /&gt; Physical — The components of the assembly are physically connected or in the same area.&lt;br /&gt;Logical— The components of the assembly same area physical connected or in the same area. |  Physical |  Physical | Logical |  Physical |
+| Assembly Relationship | Optional: Defines the type of the relationships. The defined types are:&lt;br /&gt; Permanent —An assembly that is not intended to be spilt during the production process.&lt;br /&gt;Transient — A temporary assembly using during production, such as a pallet of different materials or a batch kit. | Material Consumed | Material Consumed | Material Consumed | Material Consumed |
+| Material Use | Defines the materlal use.&lt;br /&gt; For production defined values are: Consumable, Material Produced | Material Consumed  | Material Consumed  | Material Consumed  | Material Consumed  |
+| Quantity | Specifies the arnount of resources required | 0.35 | 6 | 1 | \(not applicable\) |
+| Quantity Unit of Measure | The unit of measure of the associated property value, if applicable | Sheets / piece | Units | Units | \(not applicable\) |
+
+> Note \* Typically either a material class or material definition is specified.
+
+A material segment specification may be defined as containing an assembly of material segment specifications and as part of an assembly of material segment specifications: 
+
+1. A material segment specification may define an assembly of zero or more material segment specifications. 
+2. A material segment specification may be an assembly element of zero or more material segment specifications. 
+3. An assembly may be defined as a permanent or transient assembly of material segment specifications. 
+4. An assembly may be defined as physical or a logical assembly of material segment specifications. 
+
+5.5.8 Material segment specification property Specific properties that are required are specified in material segment specification properties. Material segment specification properties may contain nested material segment specification properties. Table 38 defines the attributes for material segment specification property objects. Table 38 — Attributes of material segment specification property 
+
+Attribute Name Description Production Examples Maintenance Examples Duality Examples Inventory Examples ID An identification of a property of the associated material properly or equipment class property. Average Surface Roughness 314 Stainless steel sterilized REID Description Contains additional information and descriptions. DefineS the minimum PotYeMMene roughness qua.\), Required alloy Sterilized sample ...ter Pallet contains en not,ve REID Value The value, set of values, or range of the property. 66.7,18 TRUE TRUE Active Value Unit of Measure The unit of measure of the associated property value, if applicable. Angstroms &lt;True, None&gt; Quantity Specilles the amount of resources required, if applicable. 0.10 OM aPPttseMe\) OM ePPiicebte\) \(net ePPhcabte\) Quantity Unit of Measure The unit of measure of the associated property value, if applicable. Sheets, piece \(not aPPttseMe\) OM ePPlicebte\) \(net ePPhoebte\) 
+
+5.5.9 Physical asset segment specification 
+
+Physical asset resources that are required tore process segment shall be presented as physical asset segment specifications. 
+
+Table 39 defines the attributes for physical asset segment specification objects. 
 
 
 
