@@ -184,41 +184,41 @@ Table 42 defines the attributes for physical asset segment specification propert
 
 **Table 40 — Attributes of physical asset segment specification roperty **
 
-| Attribute Name |  Description |  Production Examples |  Maintenance Examples | Quality Examples |  inventory Examples |
+| Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples | inventory Examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | ID | An identlfMation of a property of the assoclated physical asset property or physical asset class property | temperature calibration date | Run clock | Calibrated | Tote Type |
-| Description | Contains additional information and descriptions calibration  | Calibration date no later than 6 months from use | Running time hours from last preventive maintenance |  Within calibrated date | Only plastic totes |
+| Description | Contains additional information and descriptions calibration | Calibration date no later than 6 months from use | Running time hours from last preventive maintenance | Within calibrated date | Only plastic totes |
 | Value | The value, set of values, or range of the property For example: Vertical, Horizontal | 1999-12-31 | 1200 | True | Plastic |
 | Value | Unit of Measure The unit of measure of the associated property value, if applicable | Date | Hours | &lt;True, False&gt; | String |
 | Quantity | Specifies the amount of resources required | \(not applicable\) | \(not applicable\) | \(not applicable\) | 3 |
-| Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable  | \(not applicable\) | \(not applicable\) | \(not applicable\) | Count |
+| Quantity Unit of Measure | The unit of measure of the associated quantity, if applicable | \(not applicable\) | \(not applicable\) | \(not applicable\) | Count |
 
 **5.5.11 Process segment parameter **
 
-Specific parameters required for a segment shall be shown as process segment parameters. Process segment parameters may contain nested process segment parameters. Table 41 defines the attributes for process segment parameter objects. 
+Specific parameters required for a segment shall be shown as process segment parameters. Process segment parameters may contain nested process segment parameters. Table 41 defines the attributes for process segment parameter objects.
 
 **Table 41 — Attributes of process segment parameter **
 
-| Attribute Name | Description |  Production Examples |  Maintenance Examples | Quality Examples |  inventory Example• |
+| Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples | inventory Example• |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-|  ID | identification of the process segment parameter,  | Milling Time | Crane Lead Time |  Sample Size |  Number of Pallets |
-|  Description | Contains additional information.  | Range of acceptable milling times | Known lead time to get crane available | Size of sample to be pulled | Number of pallets needed for move |
+| ID | identification of the process segment parameter, | Milling Time | Crane Lead Time | Sample Size | Number of Pallets |
+| Description | Contains additional information. | Range of acceptable milling times | Known lead time to get crane available | Size of sample to be pulled | Number of pallets needed for move |
 | Value | The value, set of values, or range of acceptable values | {5..10} | {1..20} | {5-20} | \(not applicable\) |
-| Unit of Measure  | Unit of measure of the values, if applicable | Minutes | Days | mg | \(not applicable\) |
+| Unit of Measure | Unit of measure of the values, if applicable | Minutes | Days | mg | \(not applicable\) |
 
 **5.5.12 Process segment dependency **
 
-Table 42 defines the attributes for process segment dependency objects. The process segment dependencies can be used to describe process dependencies that are independent of any particular product or operations task. 
+Table 42 defines the attributes for process segment dependency objects. The process segment dependencies can be used to describe process dependencies that are independent of any particular product or operations task.
 
-| Attribute Name |  Description |  Production Examples |  Maintenance Examples | Quality Examples |  inventory Examples |
+| Attribute Name | Description | Production Examples | Maintenance Examples | Quality Examples | inventory Examples |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| ID | The identification of the unique instance of the process segment dependency. | PSD001 |  34 |  A35 |  PSA.I-5583 |
-| Description |  Contains additional information and descriptions of the process segment dependency definition. | Defines the dependency definition of assembly processes the Widget Assembly process segmegment | Don't start until production is complete  | May pull samples anytime during production | Don't move to storage released by qualily |
+| ID | The identification of the unique instance of the process segment dependency. | PSD001 | 34 | A35 | PSA.I-5583 |
+| Description | Contains additional information and descriptions of the process segment dependency definition. | Defines the dependency definition of assembly processes the Widget Assembly process segmegment | Don't start until production is complete | May pull samples anytime during production | Don't move to storage released by qualily |
 | Dependency Type | Defines the execution dependency constraints of one segment by another segment | Start Cleanout no earlier than T \(Timing Factor\) after work end | Start motor Replacement after Cleanout end | Pull Sample may run in parallel with MIX | Move Inventory after Quality Release |
-| Dependency Factor | Factor used by dependency |  25 | \(not applicable\) | \(not applicable\) | \(not applicable\) |
-| Unit of Measure | The units of measure of the dependency factor, if defined |  Minutes |  \(not applicable\)  |  \(not applicable\)  |  \(not applicable\)  |
+| Dependency Factor | Factor used by dependency | 25 | \(not applicable\) | \(not applicable\) | \(not applicable\) |
+| Unit of Measure | The units of measure of the dependency factor, if defined | Minutes | \(not applicable\) | \(not applicable\) | \(not applicable\) |
 
-EXAMPLE Using 'A' and 'B' to identify the process segments,or specific resources within, the segments, and T to identify the timing fator as shown in Figure 12, the dependencies include 
+EXAMPLE Using 'A' and 'B' to identify the process segments,or specific resources within, the segments, and T to identify the timing fator as shown in Figure 12, the dependencies include
 
 * B can not follow A 
 * B may run in parallel to A 
@@ -230,6 +230,12 @@ EXAMPLE Using 'A' and 'B' to identify the process segments,or specific resources
 * Start B no earlier than T \(Dependency FaMor with time T\) after A start 
 * Start B no later than T \(Dependency Factor with tune T\) after A end 
 * Start B no earlier than T \(Dependency FaMor with time T\) after A end 
+
+![](/assets/F-12.png)
+
+Figure 12 - Segment dependency examples
+
+> Note 2 The associations to the A and B segments are not represented as attributes, as per 4.5.6
 
 
 
